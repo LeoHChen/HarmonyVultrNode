@@ -17,13 +17,25 @@ function ssh-key
 {
     echo "New SSH key will be generated in data/ssh-key"
     mkdir -p "/harmony/data/ssh-key/"
-    ssh-keygen -N '' -f /harmony/data/ssh-key/harmony
+    ssh-keygen -N '' -f /harmony/data/ssh-key/harmony    
 }
 
 function launch 
 {
     terraform init
     terraform apply -var-file="data/terraform.tfvars" -auto-approve
+}
+function keys
+{
+    curl -LO https://harmony.one/wallet.sh
+}
+function init
+{
+    mkdir -p /harmony/data/ssh-key/
+    mkdir -p /harmony/data/mainnet/
+    mkdir -p /harmony/data/pangaean/
+    mkdir -p /harmony/data/state/
+    cp -F /harmony/terraform.tfvars /harmony/data/state/
 }
 
 function destroy
@@ -36,9 +48,14 @@ ACTION=$1
 if [ -z "$ACTION" ]; then
     ACTION=launch
 fi
+init 
 
 case $ACTION in
- 
+
+   keys)
+         keys ;;
+   init)
+         init ;;
    launch)  
          launch ;;
    destroy )

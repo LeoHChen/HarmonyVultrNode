@@ -3,7 +3,7 @@ ENV TERRAFORM_VERSION=0.12.6
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
 RUN apk update && apk upgrade && \
-    apk add --update jq  curl zip bash make git openssh 
+    apk add --update jq newt curl zip bash make git openssh 
 
 # Install terraform
 RUN curl -sSL https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip -o /tmp/terraform.zip && \
@@ -25,9 +25,10 @@ RUN mkdir -p $GOPATH/src/github.com/vultr; cd $GOPATH/src/github.com/vultr && \
     make build && \
     ln -s $GOPATH/bin/terraform-provider-vultr /harmony/terraform.d/plugins/linux_amd64/terraform-provider-vultr 
 ADD control.sh /harmony
+ADD terraform.tfvars /harmony
 RUN chmod 755 /harmony/control.sh
 ADD tf /harmony
-# RUN cd /harmony && terraform init
+RUN cd /harmony && terraform init
 WORKDIR /harmony
 ENTRYPOINT ["/harmony/control.sh"]
-CMD [ "" ]
+# CMD [ "" ]
