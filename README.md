@@ -1,5 +1,16 @@
-# HarmonyVultrNode
+# Harmony Vultr Node Guide
 
+Automic deployment guide for a Harmony Node running on Vultr. With following these steps you should have a node up running pretty fast.
+
+# Prerequisites
+- A Vultr Account [Sign up here and get 50 dollar for free](https://www.vultr.com/?ref=8224844-4F) 
+- * Disclaimer: Its an affiliate link but the free dollar get you started, if you dont want that 50 dollar than sign up [here](https://www.vultr.com) 
+
+## 1. Installation
+
+```
+.asdd
+```
 
 Regions 
 
