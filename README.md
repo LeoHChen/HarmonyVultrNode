@@ -50,17 +50,24 @@ As it says, you are done. Now setup your Pangaea Node or Mainnet Node
 ```
 Select yes if you want to launch a Pangaea node, or No if you dont want or dont longer want to run a Pangaea node.
 
-## 2.1 Finish the Pangaea Configuration
+## 2.1 Configure keys of the Pangaea Node
 Get your keys with following this [guide](https://docs.harmony.one/pangaea/setup-your-node-and-connect-to-pangaea/pangaea-key-generation)
 
-Go into your unzipped keys folder and you will see 2 key files, place both keys in the data\pangaea. They will be used to launched the Pangaea node.
+Go into your unzipped keys folder and you will see two key files, place both keys in the data\pangaea direcotry. Those will be placed on the Pangaea node after the creation.
+
 
 # 3 Config your Foundation Node
 ```
 ./nodes.sh mainnet
 ```
-
 Select yes if you want to launch a mainnet node, or No if you dont want or dont longer want to run a mainnet node.
+
+```
+./nodes.sh harmony-keys
+```
+This wil generate your harmony keys
+.....
+
 
 ## 4. Creating the nodes
 ```
