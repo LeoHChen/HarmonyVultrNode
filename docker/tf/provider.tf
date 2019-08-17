@@ -8,7 +8,7 @@ variable "vultr_api_key"  {}
 variable "vultr_nodetype"  {}
 variable "vultr_region"  {}
 
-output "mainnet-ip" {
+output "mainnet-ips" {
   value = ["${vultr_server.harmony-mainnet-node.*.main_ip}"]
 }
 output "pangaea-ips" {

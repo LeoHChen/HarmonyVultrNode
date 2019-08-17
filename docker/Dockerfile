@@ -1,11 +1,15 @@
 FROM ubuntu:latest
 ENV TERRAFORM_VERSION=0.12.6 
+ENV GO_VERSION=1.12.7
 
 RUN apt-get update -y
-RUN apt-get install -y jq ca-certificates curl zip bash wget make git 
-RUN wget https://dl.google.com/go/go1.12.7.linux-amd64.tar.gz && \
-    tar -xvf go1.12.7.linux-amd64.tar.gz && \
-    mv go /usr/local 
+RUN apt-get install -y jq ca-certificates curl zip wget make git 
+RUN wget https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz && \
+    tar -xvf go${GO_VERSION}.linux-amd64.tar.gz && \
+    mv go /usr/local && \
+    rm go${GO_VERSION}.linux-amd64.tar.gz && \
+    apt-get clean
+    
 ENV GOROOT=/usr/local/go
 ENV GOPATH=/root/go 
 ENV PATH=$GOPATH/bin:$GOROOT/bin:$PATH

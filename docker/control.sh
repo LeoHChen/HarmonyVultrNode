@@ -18,7 +18,7 @@ function ssh-key
     echo "New SSH key will be generated in data/ssh-key"
     mkdir -p "/harmony/data/ssh-key/"
     ssh-keygen -N '' -f /harmony/data/ssh-key/harmony
-    echo "Done generation new ssh keys, see data/ssh-keys directory"
+    echo "Done generation new ssh keys, see data/ssh-key directory"
 }
 
 function launch 
@@ -55,11 +55,11 @@ function init
     mkdir -p /harmony/data/state/
 }
 
-function initial
+function install
 {
-    echo "Created data directories"
-    echo "Creating clean config file"
     cp -f  /harmony/terraform.tfvars /harmony/data/state/
+    echo "Created data and clean config file"
+    echo "The install was succesfull!"
 }
 
 function destroy
@@ -78,8 +78,8 @@ case $ACTION in
 
    harmony-keys)
          harmony-keys ;;
-   initial)
-         initial ;;
+   install)
+         install ;;
    launch)  
          launch ;;
    destroy )

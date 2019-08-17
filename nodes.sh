@@ -26,9 +26,9 @@ function init
 {
       docker pull mwillems/harmony-vultr-node:latest
 }
-function initial
+function install
 {
-      docker run -v ${PWD}/data:/harmony/data --rm -it mwillems/harmony-vultr-node:latest initial
+      docker run -v ${PWD}/data:/harmony/data --rm -it mwillems/harmony-vultr-node:latest install
 }
 
 function destroy
@@ -46,8 +46,8 @@ case $ACTION in
 
    keys)
          keys ;;
-   initial)
-         initial ;;
+   install)
+         install ;;
    launch)  
          launch ;;
    destroy )

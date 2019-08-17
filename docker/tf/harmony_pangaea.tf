@@ -2,7 +2,7 @@ resource "vultr_server" "harmony-pangaea-node" {
   plan_id = "${var.vultr_nodetype}"
   region_id = "${var.vultr_region}"
   app_id = "37"
-  label = "harmony-pangaea-node${format("%02d", count.index + 1)}"
+  label = "harmony-pangaea-${format("%02d", count.index + 1)}"
   enable_ipv6 = false
   auto_backup = false
   enable_private_network = false
