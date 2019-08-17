@@ -41,9 +41,9 @@ Enter your Vultr Personal Access Token:
 ```
 To be able the created the required infrastructure you need to supply a the access token.
 
-Follow [this guide] (http://help.gridpane.com/en/articles/1991725-provision-a-vultr-instance-using-the-vultr-api) till your reach Step 5. You should then have a an acces token to supply to the scripts.
+Follow [this guide](http://help.gridpane.com/en/articles/1991725-provision-a-vultr-instance-using-the-vultr-api) till your reach Step 5. You should then have a an acces token to supply to the scripts.
 
-### 2.2 Select your type of Node(s)
+### 2.2 Select the type of Node(s) you want to run
 
 
 ## 2. Starting your node(s)
