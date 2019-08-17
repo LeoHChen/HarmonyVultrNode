@@ -25,6 +25,7 @@ The will download the required software and start the initialization.
 
 ### 1.2.1 SSH keys
 Fresh ssh-keys will be generated which the tool uses to connect to the nodes, see the data/ssh-key/ directory output after running the command below. You should something like:
+
 ```
 New SSH key will be generated in data/ssh-key
 Generating public/private rsa key pair.
@@ -42,7 +43,6 @@ The initialization was succesfull!
 ``` 
 As it says, you are done. Now setup your Pangaea Node or Mainnet Node
 
-```
 
 # 2 Config your Pangaea Node
 ```
