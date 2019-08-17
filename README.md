@@ -7,7 +7,7 @@ The Vultr CLI is a command-line interface for managing Harmony Foundation or Pan
 # Prerequisites
 - A Vultr Account, choose:
   - [Sign up here](https://www.vultr.com/?ref=8224844-4F)  and receive 50 dollar to run your node ~ 2,3 months but full disclaimer, its an affiliate link.
-  - Or sign up [here](https://www.vultr.com) and receive 0 dollar.
+  - Or sign up [here](https://www.vultr.com).
 - Docker installed on your laptop/computer: see https://docs.docker.com/install/
 ## 1. Installation 
 
