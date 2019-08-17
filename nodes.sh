@@ -11,10 +11,14 @@ function ssh-key
       docker run -v ${PWD}/data:/harmony/data --rm -it mwillems/harmony-vultr-node:latest ssh-key
 }
 
-
 function launch 
 {
       docker run -v ${PWD}/data:/harmony/data --rm -it mwillems/harmony-vultr-node:latest launch
+}
+
+function config 
+{
+      docker run -v ${PWD}/data:/harmony/data --rm -it mwillems/harmony-vultr-node:latest config
 }
 
 function harmony-keys
@@ -48,6 +52,8 @@ case $ACTION in
          keys ;;
    install)
          install ;;
+   config)
+         config ;;
    launch)  
          launch ;;
    destroy )

@@ -57,11 +57,36 @@ function init
 
 function install
 {
-    cp -f  /harmony/terraform.tfvars /harmony/data/state/
+    cp -f  /harmony/terraform.tfvars /harmony/data/
     echo "Created data and clean config file"
     echo "The install was succesfull!"
 }
 
+function config
+{
+    echo "Enter your Vultr Personal Access Token:"
+    read VULTR_ACCESS_TOKEN
+    echo "You entered: "$VULTR_ACCESS_TOKEN
+    sed -i "/.*vultr_api_key.*/ c\vultr_api_key = \"$VULTR_ACCESS_TOKEN\"" data/terraform.tfvars
+    echo "Do you want to launch a Pangae Node [y/n]?"
+    read AWSYES
+    case $AWSYES in
+        yY][eE][sS]|[yY])
+         sed -i "/.*harmony_pangaea_count.*/ c\harmony_pangaea_count = 1" data/terraform.tfvars;;
+        nN][oO]|[nN])
+         sed -i "/.*harmony_pangaea_count.*/ c\harmony_pangaea_count = 0" data/terraform.tfvars;;
+    esac
+    echo "Do you want to launch a Foundation (mainnet) Node [y/n]?"
+    read AWSYES
+    case $AWSYES in
+        yY][eE][sS]|[yY])
+         sed -i "/.*harmony_mainnet_count.*/ c\harmony_mainnet_count = 1" data/terraform.tfvars;;
+        nN][oO]|[nN])
+         sed -i "/.*harmony_mainnet_count.*/ c\harmony_mainnet_count = 0" data/terraform.tfvars;;
+    esac
+    echo "All set"
+
+}
 function destroy
 { 
     terraform init
@@ -80,6 +105,8 @@ case $ACTION in
          harmony-keys ;;
    install)
          install ;;
+   config)
+         config ;;         
    launch)  
          launch ;;
    destroy )
