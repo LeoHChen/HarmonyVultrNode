@@ -23,6 +23,26 @@ function ssh-key
 
 function launch 
 {
+    PANGAEA_KEY_COUNT=$(grep 'harmony_pangaea_count = 1' data/terraform.tfvars  | wc -l)
+    if [ $PANGAEA_KEY_COUNT -eq 1 ]
+    then
+        count=$(ls data/pangaea | wc -l)
+        if [ $count -eq 0 ]
+        then
+            echo "Warning, the Pangaea keys are missing, copy them first to /data/pangaea directory"
+            exit
+        fi
+    fi
+    MAINNET_KEY_COUNT=$(grep 'harmony_mainnet_count = 1' data/terraform.tfvars  | wc -l)
+    if [ $MAINNET_KEY_COUNT -eq 1 ]
+    then
+        count=$(ls data/mainnet | wc -l)
+        if [ $count -eq 0 ]
+        then
+            echo "Warning, the Mainnet keys are missing, copy them first to /data/mainnet directory"
+            exit
+        fi
+    fi
     terraform init
     terraform apply -var-file="data/terraform.tfvars" -auto-approve
 }
