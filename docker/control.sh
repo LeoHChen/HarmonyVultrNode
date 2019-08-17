@@ -46,29 +46,29 @@ function harmony-keys
     echo "Important: backup these keys"
 }
 
-function init
+
+function install
 {
+    echo "Creating data directories and clean config file"
     mkdir -p /harmony/data/ssh-key/
     mkdir -p /harmony/data/harmony-keys/
     mkdir -p /harmony/data/mainnet/
     mkdir -p /harmony/data/pangaea/
     mkdir -p /harmony/data/state/
-}
-
-function install
-{
     cp -f  /harmony/terraform.tfvars /harmony/data/
-    echo "Created data and clean config file"
-    echo "The install was succesfull!"
-}
-
-function config
-{
+    echo "Created data directories and clean config file"
+    ssh-key 
     echo "Enter your Vultr Personal Access Token:"
     read VULTR_ACCESS_TOKEN
     echo "You entered: "$VULTR_ACCESS_TOKEN
     sed -i "/.*vultr_api_key.*/ c\vultr_api_key = \"$VULTR_ACCESS_TOKEN\"" data/terraform.tfvars
-    echo "Do you want to launch a Pangae Node [y/n]?"
+
+    echo "The initialization was succesfull!"
+}
+
+function pangaea
+{
+    echo "Do you want to launch a Pangaea Node [y/n]?"
     read AWSYES
     case $AWSYES in
         yY][eE][sS]|[yY])
@@ -76,6 +76,11 @@ function config
         nN][oO]|[nN])
          sed -i "/.*harmony_pangaea_count.*/ c\harmony_pangaea_count = 0" data/terraform.tfvars;;
     esac
+    echo "Pangaean status saved"
+}
+
+function mainnet
+{
     echo "Do you want to launch a Foundation (mainnet) Node [y/n]?"
     read AWSYES
     case $AWSYES in
@@ -87,6 +92,7 @@ function config
     echo "All set"
 
 }
+
 function destroy
 { 
     terraform init
@@ -97,7 +103,6 @@ ACTION=$1
 if [ -z "$ACTION" ]; then
     ACTION=launch
 fi
-init 
 
 case $ACTION in
 
@@ -111,6 +116,10 @@ case $ACTION in
          launch ;;
    destroy )
          destroy ;;
+   mainnet )
+         mainnet ;;
+   pangaea )
+         pangaea ;;  
    login)
          NODE_TYPE=$2
          login ;;
@@ -118,4 +127,4 @@ case $ACTION in
          ssh-key ;;
 esac
 
-exit 0
+exit 0  

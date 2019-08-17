@@ -10,6 +10,14 @@ function ssh-key
 {
       docker run -v ${PWD}/data:/harmony/data --rm -it mwillems/harmony-vultr-node:latest ssh-key
 }
+function pangaea 
+{
+      docker run -v ${PWD}/data:/harmony/data --rm -it mwillems/harmony-vultr-node:latest pangaea
+}
+function mainnet
+{
+      docker run -v ${PWD}/data:/harmony/data --rm -it mwillems/harmony-vultr-node:latest mainnet
+}
 
 function launch 
 {
@@ -30,6 +38,7 @@ function init
 {
       docker pull mwillems/harmony-vultr-node:latest
 }
+
 function install
 {
       docker run -v ${PWD}/data:/harmony/data --rm -it mwillems/harmony-vultr-node:latest install
@@ -52,10 +61,16 @@ case $ACTION in
          keys ;;
    install)
          install ;;
+   init)
+         init ;;
    config)
          config ;;
    launch)  
          launch ;;
+   mainnet)  
+         mainnet ;;
+   pangaea)  
+         pangaea ;;
    destroy )
          destroy ;;
    login)
