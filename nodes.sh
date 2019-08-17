@@ -57,8 +57,8 @@ init
 
 case $ACTION in
 
-   keys)
-         keys ;;
+   harmony-keys)
+         harmony-keys ;;
    install)
          install ;;
    init)
