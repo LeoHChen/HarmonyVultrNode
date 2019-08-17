@@ -6,10 +6,9 @@ The Vultr CLI is a command-line interface for managing Harmony Foundation or Pan
 
 # Prerequisites
 - A Vultr Account, choose:
-  - [Sign up here](https://www.vultr.com/?ref=8224844-4F)  and receive 50 dollar to run your node ~ 2,3 months but its an affiliate link.
-  - Or Sign up [here](https://www.vultr.com) receive 0 dollar but no affiliate link.
+  - [Sign up here](https://www.vultr.com/?ref=8224844-4F)  and receive 50 dollar to run your node ~ 2,3 months but full disclaimer, its an affiliate link.
+  - Or sign up [here](https://www.vultr.com) and receive 0 dollar.
 - Docker installed on your laptop/computer: see https://docs.docker.com/install/
-- A Vultr Api K
 ## 1. Installation 
 
 There is no difference between Foundation or Pangaea nodes in this stage.
@@ -44,13 +43,29 @@ To be able the created the required infrastructure you need to supply a the acce
 Follow [this guide](http://help.gridpane.com/en/articles/1991725-provision-a-vultr-instance-using-the-vultr-api) till your reach Step 5. You should then have a an acces token to supply to the scripts.
 
 ### 2.2 Select the type of Node(s) you want to run
+```
+Do you want to launch a Pangaea Node [y/n]?
+```
+Select yes if you want to launch a Pangaea node, and follow 2.2.1 to config this node, otherwise skip the section.
+
+#### 2.2.1 Finish the Pangaea Configuration
+Get your keys with following this [guide](https://docs.harmony.one/pangaea/setup-your-node-and-connect-to-pangaea/pangaea-key-generation)
+
+```
+Do you want to launch a Foundation (mainnet) Node [y/n]?
+```
+Select yes if you want to launch a Foundation node.
 
 
-## 2. Starting your node(s)
+## 3. Create your node(s)
+
+
+## 3. Starting your node(s)
 
 Read [here](https://docs.harmony.one/pangaea/setup-your-node-and-connect-to-pangaea/node-setup/advanced-users/vultr#step-3-launching-your-vultr-node) about launching your node
 
-Regions 
+
+##Vultr Regions 
 
 
 {
