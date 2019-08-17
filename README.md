@@ -48,18 +48,29 @@ As it says, you are done. Now setup your Pangaea Node or Mainnet Node
 ```
 ./nodes.sh pangaea
 ```
-Select yes if you want to launch a Pangaea node, or no if you dont want or no longer want to run a Pangaea node.
+Select yes if you want to launch a Pangaea node, or No if you dont want or dont longer want to run a Pangaea node.
 
 ## 2.1 Finish the Pangaea Configuration
 Get your keys with following this [guide](https://docs.harmony.one/pangaea/setup-your-node-and-connect-to-pangaea/pangaea-key-generation)
 
+Go into your unzipped keys folder and you will see 2 key files, place both keys in the data\pangaea. They will be used to launched the Pangaea node.
+
 # 3 Config your Foundation Node
+```
+./nodes.sh mainnet
+```
 
-Select yes if you want to launch a Foundation node.
+Select yes if you want to launch a mainnet node, or No if you dont want or dont longer want to run a mainnet node.
 
-## 4. Starting your node(s)
+## 4. Creating the nodes
+```
+./nodes.sh launch
+```
 
-Read [here](https://docs.harmony.one/pangaea/setup-your-node-and-connect-to-pangaea/node-setup/advanced-users/vultr#step-3-launching-your-vultr-node) about launching your node
+
+## 5. Starting your node(s)
+
+Read [here](https://docs.harmony.one/pangaea/setup-your-node-and-connect-to-pangaea/node-setup/advanced-users/vultr#step-3-launching-your-vultr-node) about start the Harmony node
 
 
 ##Vultr Regions 
