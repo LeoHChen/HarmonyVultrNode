@@ -1,4 +1,4 @@
-resource "vultr_ssh_key" "vultr-ssh-key" {
+resource "vultr_ssh_key" "harmony-ssh-key" {
   name = "vultr-ssh-key"
   ssh_key = file("/harmony/data/ssh-key/harmony.pub")
 }

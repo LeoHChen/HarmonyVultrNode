@@ -9,7 +9,7 @@ resource "vultr_server" "harmony-pangaea-node" {
   notify_activate = false
   ddos_protection = false
   firewall_group_id = "${vultr_firewall_group.fwg.id}"
-  ssh_key_ids = ["${vultr_ssh_key.my_ssh_key.id}"]
+  ssh_key_ids = ["${vultr_ssh_key.harmony-ssh-key.id}"]
   provisioner "file" {
     source      = "data/pangaea"
     destination = "/tmp"

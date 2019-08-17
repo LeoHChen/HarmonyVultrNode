@@ -9,7 +9,7 @@ resource "vultr_server" "harmony-mainnet-node" {
   notify_activate = false
   ddos_protection = false
   firewall_group_id = "${vultr_firewall_group.fwg.id}"
-  ssh_key_ids = ["${vultr_ssh_key.my_ssh_key.id}"]
+  ssh_key_ids = ["${vultr_ssh_key.harmony-ssh-key.id}"]
   provisioner "file" {
     source      = "data/mainnet"
     destination = "/tmp"
@@ -20,7 +20,7 @@ resource "vultr_server" "harmony-mainnet-node" {
         "sudo apt update && sudo apt install -y wget tmux",
         "mkdir -p ~/.hmy/keystore",
         "wget https://harmony.one/wallet.sh && chmod u+x wallet.sh && ./wallet.sh -d",
-        "wget curl -LO https://harmony.one/node.sh && chmod u+x node.sh",
+        "curl -LO https://harmony.one/node.sh && chmod u+x node.sh",
         "mv /tmp/mainnet/UTC* ~/.hmy/keystore",
         "mv /tmp/mainnet/*.key ~"
     ]
