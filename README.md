@@ -21,46 +21,43 @@ wget https://raw.githubusercontent.com/MarkWillems/HarmonyVultrNode/master/nodes
 ```
 ./nodes.sh install
 ```
-### 1.3 Create your ssh-key
-Fresh ssh-keys will be generated which the tool uses to connect to the nodes, see the data/ssh-key/ directory output after running the command below
-```
-./nodes.sh ssh-key
-```
+The will download the required software and start the initialization.
 
-## 2. Configuring your node(s)
-
-Start the config process with running this:
+### 1.2.1 SSH keys
+Fresh ssh-keys will be generated which the tool uses to connect to the nodes, see the data/ssh-key/ directory output after running the command below. You should something like:
 ```
-./nodes.sh config
+New SSH key will be generated in data/ssh-key
+Generating public/private rsa key pair.
 ```
-### 2.1 The Vultr Personal Access Token
-
+#### 1.2.2 The Vultr Personal Access Token
 ```
 Enter your Vultr Personal Access Token:
 ```
 To be able the created the required infrastructure you need to supply a the access token.
 
-Follow [this guide](http://help.gridpane.com/en/articles/1991725-provision-a-vultr-instance-using-the-vultr-api) till your reach Step 5. You should then have a an acces token to supply to the scripts.
+Follow [this guide](http://help.gridpane.com/en/articles/1991725-provision-a-vultr-instance-using-the-vultr-api) all the way till your Step 5. You should then have a an acces token to supply to the scripts.
 
-### 2.2 Select the type of Node(s) you want to run
 ```
-Do you want to launch a Pangaea Node [y/n]?
-```
-Select yes if you want to launch a Pangaea node, and follow 2.2.1 to config this node, otherwise skip the section.
+The initialization was succesfull!
+``` 
+As it says, you are done. Now setup your Pangaea Node or Mainnet Node
 
-#### 2.2.1 Finish the Pangaea Configuration
+```
+
+# 2 Config your Pangaea Node
+```
+./nodes.sh pangaea
+```
+Select yes if you want to launch a Pangaea node, or no if you dont want or no longer want to run a Pangaea node.
+
+## 2.1 Finish the Pangaea Configuration
 Get your keys with following this [guide](https://docs.harmony.one/pangaea/setup-your-node-and-connect-to-pangaea/pangaea-key-generation)
 
-```
-Do you want to launch a Foundation (mainnet) Node [y/n]?
-```
+# 3 Config your Foundation Node
+
 Select yes if you want to launch a Foundation node.
 
-
-## 3. Create your node(s)
-
-
-## 3. Starting your node(s)
+## 4. Starting your node(s)
 
 Read [here](https://docs.harmony.one/pangaea/setup-your-node-and-connect-to-pangaea/node-setup/advanced-users/vultr#step-3-launching-your-vultr-node) about launching your node
 
