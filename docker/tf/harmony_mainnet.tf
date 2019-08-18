@@ -1,5 +1,5 @@
 resource "vultr_server" "harmony-mainnet-node" {
-  plan_id = "${var.vultr_nodetype}"
+  plan_id = "${var.vultr_mainnet_nodetype}"
   region_id = "${var.vultr_region}"
   app_id = "37"
   label = "harmony-mainnet-node${format("%02d", count.index + 1)}"

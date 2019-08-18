@@ -5,7 +5,8 @@ provider "vultr" {
 }
 
 variable "vultr_api_key"  {}
-variable "vultr_nodetype"  {}
+variable "vultr_pangaea_nodetype"  {}
+variable "vultr_mainnet_nodetype"  {}
 variable "vultr_region"  {}
 
 output "mainnet-ips" {
