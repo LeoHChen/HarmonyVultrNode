@@ -1,11 +1,21 @@
 #!/bin/bash
 
-NODE_TYPE=""
-function login
+function login-pangaea
 {   
     terraform init
-    echo "Determine ip of $NODE_TYPE node"    
-    INSTANCE_IP=$(terraform output -state=data/state/tf.tfstate -json $NODE_TYPE-ips | jq -r '.[0][0]')
+    echo "Determine ip of the pangaea node"    
+    INSTANCE_IP=$(terraform output -state=data/state/tf.tfstate -json pangaea-ips | jq -r '.[0][0]')
+    echo "Connection to $INSTANCE_IP"
+    mkdir -p /keys
+    cp /harmony/data/ssh-key/harmony /keys
+    chmod 700 /keys/harmony
+    ssh -i /keys/harmony root@$INSTANCE_IP
+}
+function login-mainnet
+{   
+    terraform init
+    echo "Determine ip of the pangaea node"    
+    INSTANCE_IP=$(terraform output -state=data/state/tf.tfstate -json pangaea-ips | jq -r '.[0][0]')
     echo "Connection to $INSTANCE_IP"
     mkdir -p /keys
     cp /harmony/data/ssh-key/harmony /keys
@@ -140,9 +150,10 @@ case $ACTION in
          mainnet ;;
    pangaea )
          pangaea ;;  
-   login)
-         NODE_TYPE=$2
-         login ;;
+   login-pangaea)
+         login-pangaea ;;
+   login-mainnet)
+         login-mainnet ;;
    ssh-key)
          ssh-key ;;
 esac

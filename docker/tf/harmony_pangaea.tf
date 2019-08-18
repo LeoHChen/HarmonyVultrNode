@@ -1,5 +1,5 @@
 resource "vultr_server" "harmony-pangaea-node" {
-  plan_id = "${var.vultr_nodetype}"
+  plan_id = "${var.vultr_pangaea_nodetype}"
   region_id = "${var.vultr_region}"
   app_id = "37"
   label = "harmony-pangaea-${format("%02d", count.index + 1)}"
@@ -19,7 +19,7 @@ resource "vultr_server" "harmony-pangaea-node" {
     inline = [
         "sudo apt update && sudo apt install -y wget tmux",
         "mkdir -p ~/.hmy/keystore",
-        "wget https://harmony.one/wallet.sh && chmod u+x wallet.sh && ./wallet.sh -d",
+        "wget https://harmony.one/wallet.sh && chmod u+x wallet.sh && ./wallet.sh -d -t",
         "wget https://raw.githubusercontent.com/harmony-one/harmony/587a29696a9bf7d77226c4b5699f495e39feb032/scripts/node.sh && chmod u+x node.sh",
         "mv /tmp/pangaea/UTC* ~/.hmy/keystore",
         "mv /tmp/pangaea/*.key ~"

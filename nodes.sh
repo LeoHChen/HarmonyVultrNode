@@ -1,9 +1,12 @@
 #!/bin/bash
 
-NODE_TYPE=""
-function login
+function login-pangaea
 {   
-      docker run -v ${PWD}/data:/harmony/data --rm -it mwillems/harmony-vultr-node:latest login 
+      docker run -v ${PWD}/data:/harmony/data --rm -it mwillems/harmony-vultr-node:latest login-pangaea
+}
+function login-mainnet
+{   
+      docker run -v ${PWD}/data:/harmony/data --rm -it mwillems/harmony-vultr-node:latest login-mainnet
 }
 
 function ssh-key 
@@ -73,9 +76,10 @@ case $ACTION in
          pangaea ;;
    destroy )
          destroy ;;
-   login)
-         NODE_TYPE=$2
-         login ;;
+   login-pangaea)
+         login-pangaea ;;
+   login-mainnet)
+         login-mainnet ;;
    ssh-key)
          ssh-key ;;
 esac
