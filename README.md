@@ -87,12 +87,24 @@ In this example the pangaea node IP address is 45.32.221.8, and can be reached n
 This will connect your to the node, press yes for establishing identity.
 
 ## 2.3 Start the node software
-```
-
-```
 Follow these [steps](https://docs.harmony.one/pangaea/setup-your-node-and-connect-to-pangaea/node-setup/advanced-users/vultr#step-3-launching-your-vultr-node) of the official guide. Most steps are already done but will shorten it some day.
 
+tl;dr type this:
+```
+tmux new-session -s node
+sudo ./node.sh -t
+No passphrase so just press enter
+First hit "Ctrl+b", then hit "d"
+```
 
+If you want to see the loggin again type
+```
+tmux a
+```
+to exit again
+```
+First hit "Ctrl+b", then hit "d"
+```
 
 # 3 Config your Foundation Node
 ```
