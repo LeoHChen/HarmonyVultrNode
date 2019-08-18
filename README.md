@@ -9,11 +9,13 @@ The Vultr CLI is a command-line interface for managing Harmony Foundation or Pan
   - [Sign up here](https://www.vultr.com/?ref=8224844-4F)  and receive 50 dollar to run your node ~ 2,3 months but full disclaimer, its an affiliate link.
   - Or sign up [here](https://www.vultr.com).
 - Docker installed on your laptop/computer: see https://docs.docker.com/install/
+
+
 ## 1. Installation 
 
 There is no difference between Foundation or Pangaea nodes in this stage.
 
-### 1.1 Download script
+### 1.1 Download the script
 ```
 wget https://raw.githubusercontent.com/MarkWillems/HarmonyVultrNode/master/nodes.sh && chmod 755 ./nodes.sh
 ```
@@ -30,6 +32,7 @@ Fresh ssh-keys will be generated which the tool uses to connect to the nodes, se
 New SSH key will be generated in data/ssh-key
 Generating public/private rsa key pair.
 ```
+
 #### 1.2.2 The Vultr Personal Access Token
 ```
 Enter your Vultr Personal Access Token:
@@ -53,7 +56,42 @@ Select yes if you want to launch a Pangaea node, or No if you dont want or dont 
 ## 2.1 Configure keys of the Pangaea Node
 Get your keys with following this [guide](https://docs.harmony.one/pangaea/setup-your-node-and-connect-to-pangaea/pangaea-key-generation)
 
-Go into your unzipped keys folder and you will see two key files, place both keys in the data\pangaea direcotry. Those will be placed on the Pangaea node after the creation.
+Go into your unzipped keys folder and you will see two key files, place both keys in the data\pangaea directory. Those will be placed on the Pangaea node after the creation.
+
+## 2.2 Create the node
+```
+./nodes.sh launch
+```
+
+The nodes should be created in a few minutes and should you end with 
+
+```
+Outputs:
+
+mainnet-ips = [
+  [],
+]
+pangaea-ips = [
+  [
+    "45.32.221.8",
+  ],
+]
+
+```
+In this example the pangaea node IP address is 45.32.221.8, and can be reached now.
+
+## 2.2 Login the nodes
+```
+./nodes.sh login-pangaea
+```
+This will connect your to the node, press yes for establishing identity.
+
+## 2.3 Start the node software
+```
+
+```
+Follow these [steps](https://docs.harmony.one/pangaea/setup-your-node-and-connect-to-pangaea/node-setup/advanced-users/vultr#step-3-launching-your-vultr-node) of the official guide. Most steps are already done but will shorten it some day.
+
 
 
 # 3 Config your Foundation Node
@@ -69,10 +107,6 @@ This wil generate your harmony keys
 .....
 
 
-## 4. Creating the nodes
-```
-./nodes.sh launch
-```
 
 
 ## 5. Starting your node(s)
