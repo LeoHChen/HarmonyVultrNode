@@ -6,11 +6,29 @@ The Vultr CLI is a command-line interface for managing Harmony Foundation or Pan
 
 
 # Prerequisites
+
 - A Vultr Account, choose:
   - [Sign up here](https://www.vultr.com/?ref=8224844-4F)  and receive 50 dollar to run your node ~ 2,3 months but full disclaimer, its an affiliate link.
   - Or sign up [here](https://www.vultr.com).
 - Docker installed on your laptop/computer: see https://docs.docker.com/install/
 
+[Migrate your FN Node](#migrate-fn-node)
+
+# 0. Migrate your FN Node [](#migrate-fn-node)
+
+1. Follow the installation of [Step 1. Installation] (#installation)
+2. Run the command
+```
+./nodes.sh mainnet
+```
+3. Copy both your keys to data/harmony-keys directory on your laptop/computer
+4. Start the node generation
+```
+./nodes.sh launch
+```
+5. Read [here](https://docs.harmony.one/pangaea/setup-your-node-and-connect-to-pangaea/node-setup/advanced-users/vultr#step-3-launching-your-vultr-node) about start the Harmony node
+6. Let the node sync 
+7. Destroy old node when the sync is ready.
 
 
 
@@ -166,13 +184,12 @@ to exit then again
 First hit "Ctrl+b", then hit "d"
 ```
 
-
 ## 5. Starting your node(s)
 
 Read [here](https://docs.harmony.one/pangaea/setup-your-node-and-connect-to-pangaea/node-setup/advanced-users/vultr#step-3-launching-your-vultr-node) about start the Harmony node
 
 
-##Vultr Regions 
+##Vultr Regions config in data/terraform.tfvars
 
 
 {
