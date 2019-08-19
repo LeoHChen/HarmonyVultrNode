@@ -209,8 +209,9 @@ In this example the Foundation node IP address is 45.32.221.8, and can be reache
 6. Let the new Node sync.
 7. Destroy old the node when the sync is finished on the new Vultr Node.
 
-#5. Manual Configuration
+# 5. Manual Configuration
 ## Vultr Regions config 
+[link](http://www.google.nl){:target="_blank"}
 As default the node is deployed to Seatle, this can be changed by altering the vultr_region in the data/terraform.tfvars apply.
 
 | Id        | Region           |
