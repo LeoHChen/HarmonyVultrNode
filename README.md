@@ -15,8 +15,9 @@ The Vultr CLI is a command-line interface for managing Harmony Foundation or Pan
 * [Installation](#1-installation)
 * [Config your Pangaea Node](#2-config-your-pangaea-node)
 * [Config your Foundation Node](#3-config-your-foundation-node)
-* [Migrate your Foundation Node to Vultr](#4-migrate-your-foundation-node-)
-* [Migrate your Foundation Node to Vultr](#4-migrate-your-foundation-node-)
+* [Migrate your Foundation Node to Vultr](#4-migrate-your-existing-foundation-node)
+* [Manual Configuration](#5-manual-configuration)
+* [Troubleshooting](#troubleshooting)
 
 
 ## 1. Installation 
