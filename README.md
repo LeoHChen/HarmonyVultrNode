@@ -7,29 +7,16 @@ The Vultr CLI is a command-line interface for managing Harmony Foundation or Pan
 
 # Prerequisites
 
-- A Vultr Account, choose:
-  - [Sign up here](https://www.vultr.com/?ref=8224844-4F)  and receive 50 dollar to run your node ~ 2,3 months but full disclaimer, its an affiliate link.
-  - Or sign up [here](https://www.vultr.com).
+- A Vultr Account:
+  - [Sign up here](https://www.vultr.com/?ref=8224844-4F) and receive a 50 dollar signing bonus which enables you to run your node ~3-4 months ( adn gets me :coffee:).
 - Docker installed on your laptop/computer: see https://docs.docker.com/install/
 
-[Migrate your FN Node](#migrate-fn-node)
-
-# 0. Migrate your FN Node [](#migrate-fn-node)
-
-1. Follow the installation of [Step 1. Installation] (#installation)
-2. Run the command
-```
-./nodes.sh mainnet
-```
-3. Copy both your keys to data/harmony-keys directory on your laptop/computer
-4. Start the node generation
-```
-./nodes.sh launch
-```
-5. Read [here](https://docs.harmony.one/pangaea/setup-your-node-and-connect-to-pangaea/node-setup/advanced-users/vultr#step-3-launching-your-vultr-node) about start the Harmony node
-6. Let the node sync 
-7. Destroy old node when the sync is ready.
-
+# Content
+* [Installation](#1-installation)
+* [Config your Pangaea Node](#2-config-your-pangaea-node)
+* [Config your Foundation Node](#3-config-your-foundation-node)
+* [Starting your Node](#4-starting-your-nodes)
+* [Migrate your Foundation Node to Vultr](#5-migrate-your-foundation-node-)
 
 
 ## 1. Installation 
@@ -73,6 +60,7 @@ As it says, you are done. Now setup your Pangaea Node or Mainnet Node
 ./nodes.sh pangaea
 ```
 Select yes if you want to launch a Pangaea node, or No if you dont want or dont longer want to run a Pangaea node.
+
 
 ## 2.1 Configure keys of the Pangaea Node
 Get your keys with following this [guide](https://docs.harmony.one/pangaea/setup-your-node-and-connect-to-pangaea/pangaea-key-generation)
@@ -144,7 +132,7 @@ This wil generate your harmony keys in the data/harmony-keys/ directory, see [he
 ./nodes.sh launch
 ```
 
-The nodes should be created in a few minutes and should you end with 
+The nodes should be created in a few minutes and should you end with and output like below
 
 ```
 Outputs:
@@ -159,8 +147,7 @@ pangaea-ips = [
 ]
 
 ```
-In this example the Foundation node IP address is 45.32.221.8, and can be reached now.
-
+In this example the Foundation node IP address is 45.32.221.8, and can be reached now with your public keys or generated password visible in the Vult portal.
 
 ```
 ./nodes.sh login-mainnet
@@ -184,77 +171,66 @@ to exit then again
 First hit "Ctrl+b", then hit "d"
 ```
 
-## 5. Starting your node(s)
+## 4. Starting your node(s)
 
 Read [here](https://docs.harmony.one/pangaea/setup-your-node-and-connect-to-pangaea/node-setup/advanced-users/vultr#step-3-launching-your-vultr-node) about start the Harmony node
 
+## 5. Migrate your existing Foundation Node
 
-##Vultr Regions config in data/terraform.tfvars
+1. Follow the installation of [Step 1. Installation] (#1-installation)
+2. Run the following command and select y.
+```
+./nodes.sh mainnet
+```
+3. Then copy both your Harmony keys to data/harmony-keys directory on your laptop/computer
+4. Start the actual Node generation
+```
+./nodes.sh launch
+```
+The nodes should be created in a few minutes and should you end with and output like below
 
+```
+Outputs:
 
-{
-  "id": "1",
-  "message": "New Jersey"
-}
-{
-  "id": "2",
-  "message": "Chicago"
-}
-{
-  "id": "3",
-  "message": "Dallas"
-}
-{
-  "id": "4",
-  "message": "Seattle"
-}
-{
-  "id": "5",
-  "message": "Los Angeles"
-}
-{
-  "id": "6",
-  "message": "Atlanta"
-}
-{
-  "id": "39",
-  "message": "Miami"
-}
+mainnet-ips = [
+ [
+    "45.32.221.8",
+  ],
+]
+pangaea-ips = [
+   [],
+]
 
+```
+In this example the Foundation node IP address is 45.32.221.8, and can be reached now with your public keys or generated password visible in the Vult portal.
 
-{
-  "id": "12",
-  "message": "Silicon Valley"
-}
-{
-  "id": "40",
-  "message": "Singapore"
-}
-{
-  "id": "7",
-  "message": "Amsterdam"
-}
-{
-  "id": "25",
-  "message": "Tokyo"
-}
-{
-  "id": "8",
-  "message": "London"
-}
-{
-  "id": "24",
-  "message": "Paris"
-}
-{
-  "id": "9",
-  "message": "Frankfurt"
-}
-{
-  "id": "22",
-  "message": "Toronto"
-}
-{
-  "id": "19",
-  "message": "Sydney"
-}
+5. Read [here](https://docs.harmony.one/pangaea/setup-your-node-and-connect-to-pangaea/node-setup/advanced-users/vultr#step-3-launching-your-vultr-node) about start the Harmony node
+6. Let the new Node sync.
+7. Destroy old the node when the sync is finished on the new Vultr Node.
+
+# Manual Configuration
+##Vultr Regions config 
+As default the node is deployed to Seatle, this can be changed by altering the vultr_region in the data/terraform.tfvars apply.
+
+| Id        | Region           |
+| ------------- |:-------------:| 
+| 1 | New Jersey 
+| 2 | Chicago
+| 3 | Dalles
+| 4 | Seatle
+| 5 | Los Angelos
+| 6 | Atlanta
+| 7 | Amsterdam
+| 8 | London
+| 9 | Frankfurt
+| 12 | Silicon Valley
+| 19 | Sydney
+| 22 | Toronto
+| 24 | Paris
+| 25 | Tokyo
+| 39 | Miami 
+| 40 | Singaport 
+| 10 | 
+
+# Troubleshooting
+Nothing yet.
