@@ -179,7 +179,7 @@ First hit "Ctrl+b", then hit "d"
 
 ## 4. Migrate your existing Foundation Node
 
-1. Follow the installation of [Step 1. Installation] (#1-installation)
+1. Follow the installation of [Step 1. Installation](#1-installation)
 2. Run the following command and select y.
 ```
 ./nodes.sh mainnet
