@@ -155,6 +155,8 @@ In this example the Foundation node IP address is 45.32.221.8, and can be reache
 ```
 ./nodes.sh login-mainnet
 ```
+This will connect your to the node, press yes for establishing identity.
+
 Follow <a href="https://nodes.harmony.one/foundational-node-playbook/setting-up-your-node/vultr-setup#step-3-launching-your-node" target="_blank">these</a> steps to start the node.
 
 tl;dr type this:
@@ -205,10 +207,15 @@ pangaea-ips = [
 
 ```
 In this example the Foundation node IP address is 45.32.221.8, and can be reached now with your public keys or generated password visible in the Vult portal.
+5. Connect to your new node
+```
+./nodes.sh login-mainnet
+```
+This will connect your to the node, press yes for establishing identity.
 
-5. Read [here](https://docs.harmony.one/pangaea/setup-your-node-and-connect-to-pangaea/node-setup/advanced-users/vultr#step-3-launching-your-vultr-node) about start the Harmony node
-6. Let the new Node sync.
-7. Destroy old the node when the sync is finished on the new Vultr Node.
+6. Read [here](https://docs.harmony.one/pangaea/setup-your-node-and-connect-to-pangaea/node-setup/advanced-users/vultr#step-3-launching-your-vultr-node) about start the Harmony node
+7. Let the new Node sync.
+8. Destroy old the node when the sync is finished on the new Vultr Node.
 
 # 5. Manual Configuration
 ## Vultr Regions config 
