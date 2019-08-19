@@ -211,7 +211,6 @@ In this example the Foundation node IP address is 45.32.221.8, and can be reache
 
 # 5. Manual Configuration
 ## Vultr Regions config 
-[link](http://www.google.nl){:target="_blank"}
 As default the node is deployed to Seatle, this can be changed by altering the vultr_region in the data/terraform.tfvars apply.
 
 | Id        | Region           |
@@ -232,7 +231,6 @@ As default the node is deployed to Seatle, this can be changed by altering the v
 | 25 | Tokyo
 | 39 | Miami 
 | 40 | Singaport 
-| 10 | 
 
 # Troubleshooting
 Nothing yet.
