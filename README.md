@@ -58,7 +58,7 @@ The initialization was succesfull!
 As it says, you are done. Now setup your Pangaea Node or Mainnet Node
 
 
-# 2 Config your Pangaea Node
+# 2. Config your Pangaea Node
 ```
 ./nodes.sh pangaea
 ```
@@ -118,7 +118,7 @@ to exit then again
 First hit "Ctrl+b", then hit "d"
 ```
 
-# 3 Config your Foundation Node
+# 3. Config your Foundation Node
 ```
 ./nodes.sh mainnet
 ```
