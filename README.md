@@ -46,12 +46,16 @@ These can also be used in Windows, follow the
 <a href="https://devops.ionos.com/tutorials/use-ssh-keys-with-putty-on-windows/" target="_blank">here</a>. You need the select data/ssh-key/harmony as private key 
 
 #### 1.2.2 The Vultr Personal Access Token
-```
-Enter your Vultr Personal Access Token:
-```
+
 To be able the created the required infrastructure you need to supply a the access token.
 
 Follow <a href="http://help.gridpane.com/en/articles/1991725-provision-a-vultr-instance-using-the-vultr-api)" target="_blank">this guide</a> all the way till your Step 5. You should then have a an acces token to supply to the scripts.
+
+```
+Enter your Vultr Personal Access Token:
+```
+
+After supplying the key the response should be like this.
 
 ```
 The initialization was succesfull!
@@ -65,6 +69,7 @@ As it says, you are done. Now setup your Pangaea Node or Mainnet Node
 ```
 Select yes if you want to launch a Pangaea node, or No if you dont want or dont longer want to run a Pangaea node.
 
+The installation will create a ~10 dollar node, the high frequency 1 CPU and 2 GB memory. If desired this can be changed later in the portal.
 
 ## 2.1 Configure keys of the Pangaea Node
 Get your keys with following this <a href="https://docs.harmony.one/pangaea/setup-your-node-and-connect-to-pangaea/pangaea-key-generation" target="_blank">guide</a>
@@ -124,6 +129,8 @@ First hit "Ctrl+b", then hit "d"
 ./nodes.sh mainnet
 ```
 Select yes if you want to launch a mainnet node, or No if you dont want or dont longer want to run a mainnet node.
+
+The installation will create a ~20 dollar monthly node, the high frequency 2 CPU and 4 GB memory. If desired this can be changed later in the portal.
 
 ## 3.1 Create the Harmony keys
 ```
@@ -215,9 +222,15 @@ This will connect your to the node, press yes for establishing identity.
 
 6. Read [here](https://docs.harmony.one/pangaea/setup-your-node-and-connect-to-pangaea/node-setup/advanced-users/vultr#step-3-launching-your-vultr-node) about start the Harmony node
 7. Let the new Node sync.
-8. Destroy old the node when the sync is finished on the new Vultr Node.
+8. Destroy the old Node when the new Vulr Node is fully synced.
 
-# 5. Manual Configuration
+## 5. Migrate your existing Pangaea Node
+1. Follow the installation of [Step 1. Installation](#1-installation)
+2. Follow the instructions of [# 2. Config your Pangaea Node](#2-config-your-pangaea-node)
+3. Let the new Node sync.
+4. Destroy old the node when the sync is finished on the new Vultr Node.
+
+# 6. Manual Configuration overrides
 ## Vultr Regions config 
 As default the node is deployed to Seatle, this can be changed by altering the vultr_region in the data/terraform.tfvars apply.
 
