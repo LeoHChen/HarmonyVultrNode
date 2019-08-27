@@ -1,6 +1,6 @@
 # Harmony Vultr Node Guide
 
-Automatic deployment guide for a Harmony Node running on Vultr. With following these steps you should have a node up running pretty fast. There seem to be some consensus that considering performance and bandwith, Vultr is the best or at least a very good choice.
+Automatic deployment console client for a Harmony Node on Vultr. With following these steps you should have a node up running pretty fast. There seem to be some consensus that considering performance and bandwith costs, Vultr is the best or at least a very good choice.
 
 The Vultr CLI is a command-line interface for managing Harmony Foundation or Pangaea Nodes. It is installed on your local computer/laptop, and will automatically create and update machines for you on Vultr.
 
@@ -8,6 +8,7 @@ Currently this tool only focus on the setup phase, so:
  - For pangaea follow this link after logging in to the VM:
   - https://docs.harmony.one/pangaea/setup-your-node-and-connect-to-pangaea/node-setup/advanced-users/vultr
   
+![the menu](https://raw.githubusercontent.com/MarkWillems/HarmonyVultrNode/master/menu.png)
 
 # Prerequisites
 
