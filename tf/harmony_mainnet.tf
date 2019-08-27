@@ -2,7 +2,7 @@ resource "vultr_server" "harmony-mainnet-node" {
   plan_id = "${var.vultr_mainnet_nodetype}"
   region_id = "${var.vultr_region}"
   app_id = "37"
-  label = "harmony-mainnet-node${format("%02d", count.index + 1)}"
+  label = "harmony-foundation-node${format("%02d", count.index + 1)}"
   enable_ipv6 = false
   auto_backup = false
   enable_private_network = false
