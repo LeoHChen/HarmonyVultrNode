@@ -15,6 +15,8 @@ namespace HarmonyVultrCli.Actions.Pangean
             var currentIp = TerraformOutput.GetMainnet();
 
             ConsoleWriter.PrintMenuHeader($"Login to {currentIp} ");
+            Console.WriteLine("This tool mostly automate step 1 and 2 described here");
+            Console.WriteLine("https://nodes.harmony.one/foundational-node-playbook/setting-up-your-node/vultr-setup");
             Console.WriteLine(string.Empty);
             var myProcess = new Process
             {

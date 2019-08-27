@@ -18,7 +18,7 @@ namespace HarmonyVultrCli.Actions.Foundation
             ConsoleWriter.PrintTitle();
             ConsoleWriter.PrintMenuHeader("Setup Foundation Node - Keys ready?");
             Console.WriteLine(string.Empty);
-            Console.WriteLine("This tool mostly automate steps described here");
+            Console.WriteLine("This tool mostly automate step 1 and 2 described here");
             Console.WriteLine("https://nodes.harmony.one/foundational-node-playbook/setting-up-your-node/vultr-setup");
             Console.WriteLine(string.Empty);
             Console.WriteLine("It's possible you already got the Harmony valid available and don't need to generate them, for example when you are migrating the Node. Then please copy them from your current node or backup.");

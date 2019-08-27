@@ -24,6 +24,7 @@ namespace HarmonyVultrCli
 
         public static void EnsureVultApiSetting()
         {
+            ConsoleWriter.PrintMenuHeader("Vultr Api key");
             Colors.WriteLine($"[vultr_api_key] Checking Vultr Api key".Yellow());
             var value =TerraformConfigFile.GetValue("vultr_api_key");
             if (value.Length <10)
