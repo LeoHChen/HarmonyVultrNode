@@ -34,7 +34,8 @@ docker run -v /your/dir/data:/harmony/data --rm -it mwillems/harmony-vultr-node:
 
 # 2. FAQ
 | Question        | Answer           |
-| How to update? | docker pull  mwillems/harmony-vultr-node:console|
+| ------------- |:-------------:| 
+| How to update? | docker pull  mwillems/harmony-vultr-node:console
 
 # 3. Manual Configuration overrides
 ## Vultr Regions config 
